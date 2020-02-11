@@ -1,28 +1,21 @@
-class Meal:
-    def __init__(self, ingredients, recipie, meal_name):
-        self.ingredients = ingredients
-        self.recipie = recipie
-        self.meal_name = meal_name
+def read_ingredients(self):
+    #reads ingredient list given
+    #copies contents of ingredients
+    #saves into folder with the name of the meal
 
-        #save the meal name to the list
-        read_ingredients(self.ingredients)
-        read_recipie(self.recipie)
-
-    def read_ingredients(self):
-        #reads ingredient list given
-        #copies contents of ingredients
-        #saves into folder with the name of the meal
-
-    def read_recipie(self):
-        #reads recipie txt
-        #copies, moves, and formats recipie content
-        #saves into folder with the name of the meal
+def read_recipie(self):
+    #reads recipie txt
+    #copies, moves, and formats recipie content
+    #saves into folder with the name of the meal
 
 def get_meals():
     #grabs the list of meals and displays them
 
-def new_meal():
-    #this is where the meal object is created
+def new_meal(ingredients, recipie, meal_name):
+    
+
+
+    #this is where the meal is initialized
 
 def make_plan():
     #randomizes the different meals
@@ -30,6 +23,12 @@ def make_plan():
     #creates ingredient list
     
 def main():
+    
+    meal_name = raw_input("Meal name: ")
+    ingredient_list = raw_input("Path to ingredients list: ")
+    recipie = raw_input("Path to recipie: ")
+
+    new_meal(ingredient_list,recipie,meal_name)
     #Read the list of meals
-    #perform replacement
+    #perform replacement 
     #ask for input from the user
