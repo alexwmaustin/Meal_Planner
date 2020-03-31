@@ -1,32 +1,14 @@
 import tkinter as tk
+from tkinter import filedialog as fd 
 
-class Demo1:
-    def __init__(self, master):
-        self.master = master
-        self.frame = tk.Frame(self.master)
-        self.label = tk.Label(self.frame, text = 'fuk')
-        self.label.pack()
-        self.button1 = tk.Button(self.frame, text = 'New Window', width = 25, command = self.new_window)
-        self.button1.pack()
-        self.frame.pack()
-    def new_window(self):
-        self.newWindow = tk.Toplevel(self.master)
-        self.app = Demo2(self.newWindow)
-
-class Demo2:
-    def __init__(self, master):
-        self.master = master
-        self.frame = tk.Frame(self.master)
-        self.quitButton = tk.Button(self.frame, text = 'Quit', width = 25, command = self.close_windows)
-        self.quitButton.pack()
-        self.frame.pack()
-    def close_windows(self):
-        self.master.destroy()
-
-def main(): 
-    root = tk.Tk()
-    app = Demo1(root)
-    root.mainloop()
-
-if __name__ == '__main__':
-    main()
+def callback():
+    name = fd.askopenfilename()
+    print(name) 
+    print(name.rfind('/'))
+    file_name = name[name.rfind('/')+1:len(name)]
+    print(file_name)
+    
+errmsg = 'Error!'
+tk.Button(text='Click to Open File', 
+       command=callback).pack(fill=tk.X)
+tk.mainloop()
